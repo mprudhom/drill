@@ -45,9 +45,6 @@ public class DrillConfig extends NestedConfig {
 
   private final ImmutableList<String> startupArguments;
 
-  @SuppressWarnings("restriction")
-  private static final long MAX_DIRECT_MEMORY = sun.misc.VM.maxDirectMemory();
-
   @VisibleForTesting
   public DrillConfig(Config config) {
     super(config);
@@ -298,6 +295,6 @@ public class DrillConfig extends NestedConfig {
   }
 
   public static long getMaxDirectMemory() {
-    return MAX_DIRECT_MEMORY;
+    return sun.misc.VM.maxDirectMemory();
   }
 }
